@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const height  = document.getElementById('height');
     const calTraingle = document.getElementById('calTriangle');
 
-    const pT = (side1, side2, side3) => side1 + side2 + side3;
+    const pT = (side1, side2, base) => side1 + side2 + base;
     const aT = (base, height) => (base * height) / 2; 
     console.groupEnd();
 
@@ -43,11 +43,15 @@ document.addEventListener('DOMContentLoaded',()=>{
         const baValue = parseFloat(base.value);
         const heValue = parseFloat(height.value);
         if(!( isNaN ( t1Value, t2Value, baValue, heValue ) )){
-            triangle.innerHTML+=`<b>Area:</b> ${aS(squareSideValue)}, <b>perimeter:</b> ${pS(squareSideValue)}`
+            triangle.innerHTML+=`<b>Area:</b> ${aT(baValue, heValue)}, <b>perimeter:</b> ${pT(t1Value, t2Value, baValue)}`
         }
     }
 
     calCircle.onclick=()=>{
+        const radioValue = parseFloat(circleR.value);
+        if(!(isNaN(radioValue))){
+            Circle.innerHTML+=`<b>Area:</b> ${aC(radioValue)}, <b>perimeter:</b> ${pC(radioValue)}`
+        }
     }
 
 })
