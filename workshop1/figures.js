@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const square = document.getElementById('square');
     const squareSide = document.getElementById('squareSide');
     const calSquare = document.getElementById('calSquare');
+    const squareResult = document.getElementById('squareResult');
     const pS = side => side *4;
     const aS = side => side **2; 
     console.groupEnd();
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const base  = document.getElementById('base');
     const height  = document.getElementById('height');
     const calTraingle = document.getElementById('calTriangle');
+    const triangleResult = document.getElementById('triangleResult');
 
     const pT = (side1, side2, base) => side1 + side2 + base;
     const aT = (base, height) => (base * height) / 2; 
@@ -24,6 +26,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     const Circle  = document.getElementById('Circle');
     const circleR  = document.getElementById('circleR');
     const calCircle = document.getElementById('calCircle');
+    const circleResult = document.getElementById('circleResult');
+
     const dC = r => r * 2;
     const pC = r => dC(r) * Math.PI;
     const aC = r => Math.pow(r,2) * Math.PI; 
@@ -33,7 +37,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     calSquare.addEventListener('click' ,()=>{
         const squareSideValue = parseFloat(squareSide.value);
         if(!(isNaN(squareSideValue))){
-            square.innerHTML+=`<b>Area:</b> ${aS(squareSideValue)}, <b>perimeter:</b> ${pS(squareSideValue)}`
+            squareResult.innerHTML+=`<b>Area:</b> ${aS(squareSideValue)}, <b>perimeter:</b> ${pS(squareSideValue)} <br>`
         }
     })
 
@@ -43,14 +47,14 @@ document.addEventListener('DOMContentLoaded',()=>{
         const baValue = parseFloat(base.value);
         const heValue = parseFloat(height.value);
         if(!( isNaN ( t1Value, t2Value, baValue, heValue ) )){
-            triangle.innerHTML+=`<b>Area:</b> ${aT(baValue, heValue)}, <b>perimeter:</b> ${pT(t1Value, t2Value, baValue)}`
+            triangleResult.innerHTML+=`<b>Area:</b> ${aT(baValue, heValue)}, <b>perimeter:</b> ${pT(t1Value, t2Value, baValue)} <br>`
         }
     }
 
     calCircle.onclick=()=>{
         const radioValue = parseFloat(circleR.value);
         if(!(isNaN(radioValue))){
-            Circle.innerHTML+=`<b>Area:</b> ${aC(radioValue)}, <b>perimeter:</b> ${pC(radioValue)}`
+            circleResult.innerHTML+=`<b>Area:</b> ${aC(radioValue)}, <b>perimeter:</b> ${pC(radioValue)} <br>`
         }
     }
 
