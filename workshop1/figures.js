@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded',()=>{
-
     //SQUARE    
     // const square = document.getElementById('square');
     const squareSide = document.getElementById('squareSide');
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const aC = r => Math.pow(r,2) * Math.PI; 
 
     //EVENTS
-    calSquare.click =()=>{
+    calSquare.onclick =()=>{
         const squareSideValue = parseFloat(squareSide.value);
         if(!(isNaN(squareSideValue))){
             squareResult.innerHTML=`<b>Area:</b> ${aS(squareSideValue)}, <b>perimeter:</b> ${pS(squareSideValue)} <br>`
@@ -54,5 +53,4 @@ document.addEventListener('DOMContentLoaded',()=>{
             circleResult.innerHTML=`<b>Area:</b> ${aC(radioValue)}, <b>perimeter:</b> ${pC(radioValue)} <br>`
         }
     }
-
 })
