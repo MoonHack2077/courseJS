@@ -29,7 +29,15 @@ const fashion= arr =>{
     return fash.pop()[0];
 }
 
+const top10 = arr =>{
+    const spliceStart = (arr.length * 90)/100;
+    const spliceEnd = arr.length - spliceStart;
+    const salaryTop10= arr.splice(spliceStart, spliceEnd);
+    return middle(salaryTop10);
+}
+
+console.log(salary);
 console.log(middle(salary));
 console.log(fashion(salary));
 console.log(salaryAve);
-console.log(salary);
+console.log(top10(salary));
