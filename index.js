@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     const day = date.getDate();
 
     if( month<4 ){
-        age.innerHTML=`I´m ${years-1} years old`
+        age.innerHTML=`I´m ${years-1} years old,`
     }else if( month===4 && day<22 ){
-            age.innerHTML=`I´m ${years-1} years old`
+            age.innerHTML=`I´m ${years-1} years old,`
     }else{
-        age.innerHTML=`I´m ${years} years old`
+        age.innerHTML=`I´m ${years} years old,`
     }
 })
