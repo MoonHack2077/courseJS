@@ -1,0 +1,31 @@
+.presentation{
+    width: 210px;
+    font-size: 12px;
+    text-align: center;
+    margin: auto;
+}
+.presentation h2, .presentation p{
+    margin: 20px;
+    line-height: 1.5;
+}
+.presentation h2{
+    line-height: 1.5;
+}
+
+/*TYPEWRITER EFFECT*/
+.name{
+    display: block;
+    white-space: nowrap;
+    border-right: 1px var(--middle) solid;
+    width: 26ch;
+    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+@keyframes typing{
+    from {width: 0;}
+}
+
+@keyframes blink{
+    50% { border-color: transparent;}
+}
+/*------*/

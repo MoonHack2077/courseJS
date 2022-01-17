@@ -1,137 +1,25 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color: #CCFFFF;
-    font-family: monospace;
-}
-
-:root{
-    --dark:#001011;
-    --middle: #3AAFB9;
-    --ligth:#63E9EE;
-}
-
-body{
-    background-color: var(--dark);
-    text-align: center;
-}
-
-.presentation{
-    width: 210px;
-    font-size: 12px;
-    text-align: center;
-    margin: auto;
-}
-.presentation h2, .presentation p{
-    margin: 20px;
-    line-height: 1.5;
-}
-.presentation h2{
-    line-height: 1.5;
-}
-
-/*TYPEWRITER EFFECT*/
-.name{
-    display: block;
-    white-space: nowrap;
-    border-right: 1px var(--middle) solid;
-    width: 26ch;
-    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
-    overflow: hidden;
-}
-@keyframes typing{
-    from {width: 0;}
-}
-
-@keyframes blink{
-    50% { border-color: transparent;}
-}
-/*------*/
 .container{
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-rows: repeat(3, 1fr); */
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
 }
 
 .container div{
+    display: grid;
+    grid-template-rows: repeat(3,80px);
+    gap: 15px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    
     background-color: var(--middle);
     padding: 20px;
     width: 210px;
-    text-align: center;
-    margin-left: 15px;
+    /* text-align: center;
+    margin-left: 15px; */
 }
 
-/* .first{
-    grid-column: span 1 / 2;
-}
-
-.second{
-    grid-column: span 2 / 3;
-}
-
-.third{
-    grid-column: span 3 / 4;
-} */
-
-.second_img, .third_img{
-    width: 100px;
-}
-.first_img{
-    width: 150px;
-}
-.first_input, .second_input, .third_input{
-    border: none;
-    outline: 1.5px solid var(--ligth);
-    padding: 6px;
-    background-color: var(--dark);
-    color: var(--ligth);
-    margin-top: 30px;
-}
-.first_input{
-    letter-spacing: 1px;
-}
-.second_input, .third_input{
-    padding: 6px 20px;
-    letter-spacing: 3px;
-}
-.third{
-    margin-bottom: 15px;
-}
-
-.first_input:hover, .second_input:hover, .third_input:hover{
-    background-color: #000000;
-    color: #99FFFF;
-    outline: 3px solid #99FFFF;
-}
-.second_img{
-    width: 80px;
-    margin-bottom: 20px;
-    transform: rotate(10deg);
-}
-
-.first:hover .first_img{
-    animation: first_animation 1s cubic-bezier(0.25,0.1,0.25,1) infinite alternate ;
-}
-.second:hover .second_img{
-    animation: second_animation .6s cubic-bezier(0.25,0.1,0.25,1) infinite  alternate ;
-}
-
-.third:hover .third_img{
-    content: '';
-    animation: third_animation .5s cubic-bezier(0.25,0.1,0.25,1) infinite alternate;
-}
-
-@keyframes first_animation{
-    from{transform: rotateY(-45deg);}
-    to{transform:  rotateY(60deg);}
-}
-@keyframes second_animation{
-    from{transform: rotate(10deg);}
-    to{transform: rotate(-10deg);}
-}
-@keyframes third_animation{
-    to {transform: translateY(-10px)}
+.container p{
+    font-size: 12px;
 }

@@ -1,0 +1,36 @@
+
+.first_img{
+    width: 150px;
+}
+.second_img{
+    width: 80px;
+    transform: rotate(10deg);
+}
+.third_img{
+    width: 100px;
+}
+
+
+/*IMAGES ANIMATION*/
+.first:hover .first_img{
+    animation: first_animation 1s cubic-bezier(0.25,0.1,0.25,1) infinite alternate ;
+}
+.second:hover .second_img{
+    animation: second_animation .6s cubic-bezier(0.25,0.1,0.25,1) infinite  alternate ;
+}
+
+.third:hover .third_img{
+    animation: third_animation .5s cubic-bezier(0.25,0.1,0.25,1) infinite alternate;
+}
+
+@keyframes first_animation{
+    from{transform: rotateY(-45deg);}
+    to{transform:  rotateY(60deg);}
+}
+@keyframes second_animation{
+    from{transform: rotate(10deg);}
+    to{transform: rotate(-10deg);}
+}
+@keyframes third_animation{
+    to {transform: translateY(-10px);}
+}
