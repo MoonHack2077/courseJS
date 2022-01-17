@@ -7,12 +7,12 @@
 }
 
 :root{
-    --dark:#001011;
+    --dark: #001011;
     --middle: #3AAFB9;
-    --ligth:#63E9EE;
+    --ligth: #63E9EE;
 }
 
 body{
     background-color: var(--dark);
-    text-align: center;
+    /* text-align: center; */
 }

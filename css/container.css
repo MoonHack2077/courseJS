@@ -12,12 +12,10 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    
+
     background-color: var(--middle);
     padding: 20px;
     width: 210px;
-    /* text-align: center;
-    margin-left: 15px; */
 }
 
 .container p{
