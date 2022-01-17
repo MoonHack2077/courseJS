@@ -12,6 +12,10 @@
 }
 
 /*TYPEWRITER EFFECT*/
+#name{
+    display: block;
+    color: var(--ligth);
+}
 .name{
     display: block;
     white-space: nowrap;
@@ -21,7 +25,6 @@
     overflow: hidden;
     color: var(--ligth);
 }
-
 
 @keyframes typing{
     from {width: 0;}

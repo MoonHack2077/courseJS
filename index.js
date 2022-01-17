@@ -1,15 +1,37 @@
 document.addEventListener('DOMContentLoaded',()=>{
-    // const first_work = document.getElementById('first_work');
-    // const second_work = document.getElementById('second_work');
-    // const third_work = document.getElementById('third_work');
+    const name = document.getElementById('name');
+    const age = document.getElementById('age');
 
-    // first_work.onmouseup=()=>{
-    //     window.open('workshop1/figures.html');
-    // }
-    // second_work.onclick=()=>{
-    //     window.open('workshop2/discounts.html');
-    // }
-    // third_work.onclick=()=>{
-    //     window.open('workshop3/statistics.html');
-    // }
+    name.onmousemove=()=>{
+        name.classList.toggle('name');
+    }
+
+    
+    const date  = new Date();
+    const years  = date.getFullYear()-2004;
+    const hour  = date.getHours();
+    const minute  = date.getMinutes();
+    const seconds  = date.getSeconds();
+    const month  = date.getMonth();
+    const day = date.getDate();
+
+    if( month<4){
+        age.innerHTML=`I´m ${years-1} years old`
+    }else if( month>=4){
+        if(day>=22){
+            age.innerHTML=`I´m ${years} years old`
+        }else{
+            age.innerHTML=`I´m ${years-1} years old`
+        }
+    }
+
+    
+    
+
+    // console.log(date);
+    // console.log(month);
+    // console.log(hour)
+    // console.log(minute);
+    // console.log(seconds);
+    // console.log(years);
 })
