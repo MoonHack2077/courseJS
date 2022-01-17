@@ -1,7 +1,6 @@
 .presentation{
     width: 210px;
     font-size: 12px;
-    text-align: center;
     margin: auto;
 }
 .presentation h2, .presentation p{
@@ -20,11 +19,18 @@
     width: 26ch;
     animation: typing 2s steps(12), blink .5s infinite step-end alternate;
     overflow: hidden;
+    color: var(--ligth);
 }
+
 
 @keyframes typing{
     from {width: 0;}
 }
 @keyframes blink{
     50% { border-color: transparent;}
+}
+
+/*MEDIA QUERY*/
+@media screen and (min-width:480px) {
+
 }
