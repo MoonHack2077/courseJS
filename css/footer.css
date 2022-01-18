@@ -1,0 +1,22 @@
+footer{
+    background-color: var(--middle);
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    
+}
+footer p{
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+.follow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+a{
+    text-decoration:none;
+    color: var(--dark);
+}
