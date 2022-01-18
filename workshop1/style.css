@@ -6,6 +6,7 @@
 }
 :root{
     --dark: #001011;
+    --nice: #093A3E;
     --middle: #3AAFB9;
     --light: #64E9EE;
 }
@@ -26,7 +27,6 @@ body{
     margin: auto;
     margin-top: 100px;
     padding: 40px 50px;
-    outline: 1px solid red;
 }
 
 .container__forms form{
@@ -36,7 +36,7 @@ body{
     padding: 15px;
     background-color: var(--middle);
 }
-.container__forms form input{
+.container__forms form input, select{
     border: none;
     outline: none;
     background-color: var(--dark);
@@ -46,4 +46,8 @@ body{
 
 .container__forms #triangle{
     gap: 0;
+}
+
+select{
+    background-color: var(--nice);
 }
