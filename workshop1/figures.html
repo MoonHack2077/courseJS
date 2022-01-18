@@ -4,57 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Geometric figures</title>
 </head>
 <body>
-    <h1>Area and perimeter of geometric figures</h1>
-    <form id="square">
-        <h3>SQUARE</h3>
-        <label for="squareSide">Type the side: </label>
-        <input type="number" id="squareSide">
-        <select id="squareMeasure">
-            <option value="km">km</option>
-            <option value="m">m</option>
-            <option value="cm" selected>cm</option>
-            <option value="mm">mm</option>
-        </select>
-        <input type="button" id="calSquare" value="calculate">
-        <p id="squareResult"></p>
-    </form>
+    <div class="container">
 
-    <form id="triangle">
-        <h3>TRIANGLE</h3>
-        <label for="t1">Type the side 1: </label>
-        <input type="number" id="t1"><br>
-        <label for="t2">Type the side 2: </label>
-        <input type="number" id="t2"><br>
-        <label for="base">Type the base: </label>
-        <input type="number" id="base"><br>
-        <label for="height">Type the height: </label>
-        <input type="number" id="height"><br>
-        <select id="triangleMeasure">
-            <option>km</option>
-            <option>m</option>
-            <option selected>cm</option>
-            <option>mm</option>
-        </select>
-        <input type="button" id="calTriangle" value="calculate">
-        <p id="triangleResult"></p>
-    </form>
-
-    <form id="Circle">
-        <h3>CIRCLE</h3>
-        <label for="circleR">Type the radio: </label>
-        <input type="number" id="circleR">
-        <select id="circleMeasure">
-            <option>km</option>
-            <option>m</option>
-            <option selected>cm</option>
-            <option>mm</option>
-        </select>
-        <input type="button" id="calCircle" value="calculate">
-        <p id="circleResult"></p>
-    </form>
+        <h1>Area and perimeter of geometric figures</h1>
+        
+        <div class="container__forms">
+            <form id="square">
+                <h3>SQUARE</h3>
+                <label for="squareSide">Type the side: </label>
+                <input type="number" id="squareSide">
+                <select id="squareMeasure">
+                    <option value="km">km</option>
+                    <option value="m">m</option>
+                    <option value="cm" selected>cm</option>
+                    <option value="mm">mm</option>
+                </select>
+                <input type="button" id="calSquare" value="calculate">
+                <p id="squareResult"></p>
+            </form>
+    
+            <form id="triangle">
+                <h3>TRIANGLE</h3>
+                <label for="t1">Type the side 1: </label>
+                <input type="number" id="t1"><br>
+                <label for="t2">Type the side 2: </label>
+                <input type="number" id="t2"><br>
+                <label for="base">Type the base: </label>
+                <input type="number" id="base"><br>
+                <label for="height">Type the height: </label>
+                <input type="number" id="height"><br>
+                <select id="triangleMeasure">
+                    <option>km</option>
+                    <option>m</option>
+                    <option selected>cm</option>
+                    <option>mm</option>
+                </select>
+                <input type="button" id="calTriangle" value="calculate">
+                <p id="triangleResult"></p>
+            </form>
+    
+            <form id="Circle">
+                <h3>CIRCLE</h3>
+                <label for="circleR">Type the radio: </label>
+                <input type="number" id="circleR">
+                <select id="circleMeasure">
+                    <option>km</option>
+                    <option>m</option>
+                    <option selected>cm</option>
+                    <option>mm</option>
+                </select>
+                <input type="button" id="calCircle" value="calculate">
+                <p id="circleResult"></p>
+            </form>
+        </div>
+        
+    </div>
+    
     <script src="figures.js"></script>
 </body>
 </html>
