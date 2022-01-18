@@ -7,15 +7,19 @@ footer{
 footer p{
     margin-bottom: 10px;
     color: var(--dark);
+    font-weight: 900;
 }
 .follow{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
-    
 }
 a{
     text-decoration:none;
     color: var(--dark);
+}
+
+a:hover{
+    color: #99FFFF;
 }
