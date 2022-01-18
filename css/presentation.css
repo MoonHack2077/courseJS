@@ -1,13 +1,16 @@
 .presentation{
+    max-width: 700px;
+    min-width: 375px;
+    padding: 30px;
     font-size: 12px;
     margin: auto;
 }
 .presentation h2, .presentation p{
-    margin: 20px;
+    /* margin: 20px; */
     line-height: 1.5;
 }
 .presentation p{
-    display: block;
+    font-size: 15px;
 }
 .presentation h2{
     font-size: 40px;
@@ -38,7 +41,7 @@
 /*MEDIA QUERY*/
 @media screen and (min-width:600px) {
     .presentation p{
-        font-size: 16px;
+        font-size: 25px;
     }
     .name{
         transform: translateX(-25px);
