@@ -1,0 +1,7 @@
+article{
+    display: grid;
+    grid-template-rows: 300px, 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}

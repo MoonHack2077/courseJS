@@ -18,3 +18,9 @@
     color: #99FFFF;
     outline: 3px solid #99FFFF;
 }
+
+@media screen and (min-width: 600px) {
+    .first_input, .second_input, .third_input{
+        transform: scale(1.2);
+    }
+}

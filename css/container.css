@@ -25,3 +25,15 @@
 .second p{
     margin-top: 10px;
 }
+
+@media screen and (min-width: 600pX){
+    .container{
+        gap: 30px;
+    }
+    .container div{
+        width: 300px;
+    }
+    .container p{
+        font-size: 16.5px;
+    }
+}
