@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         const isNegative = () => triangleResult.innerHTML= '<b>The sides must be greater than 0!!</b>';
         
         const aT = (base, height) => (base * height) / 2; 
+        const pT = (side1, side2, base) => side1 + side2 + base;
 
         if(triangle_type_value === 'equi'){
             const equi_P = side => side*3; 
@@ -74,7 +75,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         }
         
         else if(triangle_type_value === 'esca'){
-            const pT = (side1, side2, base) => side1 + side2 + base;
             const esca_H = (side1, side2, base) => {
                 const S = (side1 + side2 + base) / 2;
                 const H = 2/base * Math.sqrt(S*(S-side1)*(S-side2)*(S-base));
@@ -116,43 +116,88 @@ document.addEventListener('DOMContentLoaded',()=>{
         else if(triangle_type_value === 'recta'){
             triangle_type_input.innerHTML=
             `
-                <p>Type the side length: </p>
-                <input type="number" id="equi_value">
+                <p>Type the opposite hick length: </p>
+                <input type="number" id="opposite">
+                <p>Type the adjacent hick length: </p>
+                <input type="number" id="adjacent">
             `
-            const equi_value = document.getElementById('equi_value');
+            const opposite = document.getElementById('opposite');
+            const adjacent = document.getElementById('adjacent');
             calTriangle.onclick=()=>{
-                if( !( isNaN(equi_value.value) ) ){
-                    triangleResult.innerHTML=`<b>Area: ${aT(equi_value.value, equi_H(equi_value.value))} ${triangleMeasure.value}² <br> Perimeter: ${equi_P(equi_value.value)} ${triangleMeasure.value}</b><br>`
+                const oppositeValue = parseFloat(opposite.value);
+                const adjacentValue = parseFloat(adjacent.value);
+
+                const Hipo = (a, o) => Math.sqrt(a**2 + o**2);
+                
+                if(isPositive(oppositeValue) && isPositive(adjacentValue)){
+                    if( !(isNaN(oppositeValue) || isNaN(adjacentValue))){
+                        triangleResult.innerHTML=
+                        `
+                            <b>Area: ${aT(adjacentValue,oppositeValue)} ${triangleMeasure.value}² <br> 
+                            Perimeter: ${pT(adjacentValue, oppositeValue, Hipo(adjacentValue,oppositeValue))} ${triangleMeasure.value}</b><br>
+                        `
+                    }
+                }else{
+                    isNegative();
                 }
             }
         }
         
-        else if(triangle_type_value === 'acu'){
-            triangle_type_input.innerHTML=
-            `
-                <p>Type the side length: </p>
-                <input type="number" id="equi_value">
-            `
-            const equi_value = document.getElementById('equi_value');
-            calTriangle.onclick=()=>{
-                if( !( isNaN(equi_value.value) ) ){
-                    triangleResult.innerHTML=`<b>Area: ${aT(equi_value.value, equi_H(equi_value.value))} ${triangleMeasure.value}² <br> Perimeter: ${equi_P(equi_value.value)} ${triangleMeasure.value}</b><br>`
-                }
-            }
-        }
+        // else if(triangle_type_value === 'acu'){
+        //     const esca_H = (side1, side2, base) => {
+        //         const S = (side1 + side2 + base) / 2;
+        //         const H = 2/base * Math.sqrt(S*(S-side1)*(S-side2)*(S-base));
+        //         return H;
+        //     }
+        //     triangle_type_input.innerHTML=
+        //     `
+        //         <p><b>Type the side 1 length:</b> </p>
+        //         <input type="number" id="esca_value">
+        //         <p><b>Type the side 2 length:</b> </p>
+        //         <input type="number" id="esca2_value">
+        //         <p><b>Type the base length:</b> </p>
+        //         <input type="number" id="esca3_value">
+        //     `
+        //     const esca_value = document.getElementById('esca_value');
+        //     const esca2_value = document.getElementById('esca2_value');
+        //     const esca3_value = document.getElementById('esca3_value');
+        //     calTriangle.onclick=()=>{
+        //         const escaValue = parseFloat(esca_value.value);
+        //         const esca2Value = parseFloat(esca2_value.value);
+        //         const esca3Value = parseFloat(esca3_value.value);
+
+        //         if(isPositive(escaValue) && isPositive(esca2Value) && isPositive(esca3Value)){
+        //                 triangleResult.innerHTML='<hr><b>What?, there are equals sides</b>';
+        //                 if( !( isNaN(escaValue) || isNaN(esca2Value) || isNaN(esca3Value) ) ){
+        //                     triangleResult.innerHTML=
+        //                     `
+        //                         <b>Area: ${aT(esca3Value, esca_H(escaValue, esca2Value, esca3Value))} ${triangleMeasure.value}² <br> 
+        //                         Perimeter: ${pT(escaValue, esca2Value, esca3Value)} ${triangleMeasure.value}</b><br>
+        //                     `
+        //                 }
+                    
+        //         }else{
+        //             isNegative();
+        //         }
+        //     }
+        // }
         
-        else if(triangle_type_value === 'obtu'){
-            triangle_type_input.innerHTML=
-            `
-                <p>Type the side length: </p>
-                <input type="number" id="equi_value">
-            `
-            const equi_value = document.getElementById('equi_value');
-            calTriangle.onclick=()=>{
-                if( !( isNaN(equi_value.value) ) ){
-                    triangleResult.innerHTML=`<b>Area: ${aT(equi_value.value, equi_H(equi_value.value))} ${triangleMeasure.value}² <br> Perimeter: ${equi_P(equi_value.value)} ${triangleMeasure.value}</b><br>`
-                }
-            }
-        }
+        // else if(triangle_type_value === 'obtu'){
+        //     triangle_type_input.innerHTML=
+        //     `
+        //         <p>Type the side length: </p>
+        //         <input type="number" id="equi_value">
+        //     `
+        //     const equi_value = document.getElementById('equi_value');
+        //     calTriangle.onclick=()=>{
+        //         if( !( isNaN(equi_value.value) ) ){
+        //             triangleResult.innerHTML=
+        //             `
+        //                 <b>Area: ${aT(equi_value.value, equi_H(equi_value.value))} ${triangleMeasure.value}² <br> 
+        //                 Perimeter: ${equi_P(equi_value.value)} ${triangleMeasure.value}</b><br>
+        //             `
+        //         }
+        //     }
+        // }
     }
 })
