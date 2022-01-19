@@ -7,18 +7,24 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     triangle_type.onchange=()=>{
         const triangle_type_value = triangle_type.value;
+        const isPositive = num => num > 0;
+        const isNegative = () => triangleResult.innerHTML= '<b>The sides must be greater than 0!!</b>';
 
         if(triangle_type_value === 'equi'){
             triangle_type_input.innerHTML=
             `
-                <p>Type the side length: </p>
+                <p><b>Type the side length: </b></p>
                 <input type="number" id="equi_value">
             `
             const equi_value = document.getElementById('equi_value');
             calTriangle.onclick=()=>{
                 const equiValue = parseFloat(equi_value.value);
                 if( !( isNaN(equiValue) ) ){
-                    triangleResult.innerHTML=`<b>Area: ${aT(equiValue, equi_H(equiValue))} ${triangleMeasure.value}² <br> Perimeter: ${equi_P(equiValue)} ${triangleMeasure.value}</b><br>`
+                    if(isPositive(equiValue)){
+                        triangleResult.innerHTML=`<b>Area: ${aT(equiValue, equi_H(equiValue))} ${triangleMeasure.value}² <br> Perimeter: ${equi_P(equiValue)} ${triangleMeasure.value}</b><br>`
+                    }else{
+                        isNegative();
+                    }
                 }
             }
         }
@@ -26,10 +32,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         else if(triangle_type_value === 'iso'){
             triangle_type_input.innerHTML=
             `
-                <p>Type the length of the equal sides: </p>
+                <p><b>Type the length of the equal sides:</b> </p>
                 <input type="number" id="iso_value">
 
-                <p>Type the base length: </p>
+                <p><b>Type the base length:</b> </p>
                 <input type="number" id="base_value">
             `
             const iso_value = document.getElementById('iso_value');
@@ -40,7 +46,11 @@ document.addEventListener('DOMContentLoaded',()=>{
                 if( baseValue >= isoValue*2 ){
                     triangleResult.innerHTML='The base can´t be larger than the others sides'
                 }else if( !( isNaN(isoValue) || isNaN(baseValue) )  ){
-                    triangleResult.innerHTML=`<b>Area: ${aT( baseValue, iso_H(isoValue, baseValue))} ${triangleMeasure.value}² <br> Perimeter: ${iso_P(isoValue, baseValue)} ${triangleMeasure.value}</b><br>`
+                    if( isPositive(isoValue) && isPositive(baseValue) ){
+                        triangleResult.innerHTML=`<b>Area: ${aT( baseValue, iso_H(isoValue, baseValue))} ${triangleMeasure.value}² <br> Perimeter: ${iso_P(isoValue, baseValue)} ${triangleMeasure.value}</b><br>`
+                    }else{
+                        isNegative();
+                    }
                 }
             }
         }
@@ -48,22 +58,33 @@ document.addEventListener('DOMContentLoaded',()=>{
         else if(triangle_type_value === 'esca'){
             triangle_type_input.innerHTML=
             `
-                <p>Type the side 1 length: </p>
+                <p><b>Type the side 1 length:</b> </p>
                 <input type="number" id="esca_value">
-                <p>Type the side 2 length: </p>
+                <p><b>Type the side 2 length:</b> </p>
                 <input type="number" id="esca2_value">
-                <p>Type the base length: </p>
+                <p><b>Type the base length:</b> </p>
                 <input type="number" id="esca3_value">
             `
             const esca_value = document.getElementById('esca_value');
             const esca2_value = document.getElementById('esca2_value');
             const esca3_value = document.getElementById('esca3_value');
             calTriangle.onclick=()=>{
-                const escaValue = parseFloat(esca_value);
-                const esca2Value = parseFloat(esca2_value);
-                const esca3Value = parseFloat(esca3_value);
-                if( !( isNaN(escaValue) || isNaN(esca2Value) || isNaN(esca3Value) ) ){
-                    triangleResult.innerHTML=`<b>Area: ${aT(esca3Value, esca_H(escaValue, esca2Value, esca3Value))} ${triangleMeasure.value}² <br> Perimeter: ${pT(escaValue, esca2Value, esca3Value)} ${triangleMeasure.value}</b><br>`
+                const escaValue = parseFloat(esca_value.value);
+                const esca2Value = parseFloat(esca2_value.value);
+                const esca3Value = parseFloat(esca3_value.value);
+                if( (escaValue + esca2Value > esca3Value) && (escaValue + esca3Value > esca2Value) && (esca2Value + esca3Value > escaValue)){
+                    if(escaValue === esca2Value || escaValue === esca3Value){
+                        triangleResult.innerHTML='<hr><b>What?, there are equals sides</b>';
+                    }else if( !( isNaN(escaValue) || isNaN(esca2Value) || isNaN(esca3Value) ) ){
+                        if(isPositive(escaValue) && isPositive(esca2Value) && isPositive(esca3Value)){
+                            triangleResult.innerHTML=`<b>Area: ${aT(esca3Value, esca_H(escaValue, esca2Value, esca3Value))} ${triangleMeasure.value}² <br> Perimeter: ${pT(escaValue, esca2Value, esca3Value)} ${triangleMeasure.value}</b><br>`
+                        }else{
+                            isNegative();
+                        }
+                    }
+                }else{
+                    triangleResult.innerHTML='<b>The sum of 2 sides must be greater than te other side</b>';
+
                 }
             }
         }
@@ -118,12 +139,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     const equi_H = side => Math.sqrt(side**2-(side/2)**2);
 
     const iso_P = (side1, side2) => (side1*2) + side2;
-    const iso_H = (side1, side2) =>  Math.sqrt( side1**2 - (side2/2)**2);
+    const iso_H = (side1, base) =>  Math.sqrt( side1**2 - (base/2)**2);
 
     const esca_H = (side1, side2, base) => {
         const S = (side1 + side2 + base) / 2;
-        const H = 2/base * Math.sqrt(S*(S-side1)(S-side2)(S-base));
-        console.log(H);
+        const H = 2/base * Math.sqrt(S*(S-side1)*(S-side2)*(S-base));
         return H;
     }
 })

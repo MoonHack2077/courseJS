@@ -21,20 +21,28 @@ document.addEventListener('DOMContentLoaded',()=>{
     const pC = r => dC(r) * Math.PI;
     const aC = r => Math.pow(r,2) * Math.PI; 
 
+    const isPositive = num => num > 0;
+
     //EVENTS
     calSquare.onclick =()=>{
         const squareSideValue = parseFloat(squareSide.value);
-        if(!(isNaN(squareSideValue))){
-            squareResult.innerHTML=`<b>Area: ${aS(squareSideValue)} ${squareMeasure.value}² <br> Perimeter: ${pS(squareSideValue)} ${squareMeasure.value}</b> <br>`
+        if( !(isNaN(squareSideValue)) ){
+            if(isPositive(squareSideValue)){
+                squareResult.innerHTML=`<b>Area: ${aS(squareSideValue)} ${squareMeasure.value}² <br> Perimeter: ${pS(squareSideValue)} ${squareMeasure.value}</b> <br>`
+            }else{
+                squareResult.innerHTML='<b>The side must be greater than 0!!</b>'
+            }
         }
     }
 
-    
-
     calCircle.onclick=()=>{
         const radioValue = parseFloat(circleR.value);
-        if(!(isNaN(radioValue))){
-            circleResult.innerHTML=`<b>Area: ${aC(radioValue)} ${circleMeasure.value}² <br> Perimeter: ${pC(radioValue)} ${circleMeasure.value}</b><br>`
+        if( !(isNaN(radioValue)) ){
+            if( isPositive(radioValue) ){
+                circleResult.innerHTML=`<b>Area: ${aC(radioValue)} ${circleMeasure.value}² <br> Perimeter: ${pC(radioValue)} ${circleMeasure.value}</b><br>`
+            }else{
+                circleResult.innerHTML='<b>The radio must be greater than 0!!</b>'
+            }
         }
     }
 })
