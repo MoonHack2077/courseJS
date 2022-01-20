@@ -16,6 +16,6 @@ body{
     background-color: var(--dark);
     text-align: center;
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr repeat(2,800px) auto;
     min-height: 100vh;
 }
