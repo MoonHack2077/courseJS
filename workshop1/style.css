@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+:root{
+    --dark: #001011;
+    --nice: #093A3E;
+    --middle: #3AAFB9;
+    --light: #64E9EE;
+}
+/* body{
+    background-color: var(--dark);
+} */
+.container_workshop1{
+    text-align: center;
+    padding-top: 100px;
+    min-height: 100vh;
+}
+.container_workshop1 a{
+    color: var(--light);
+    font-size: 30px;
+    margin-top: 100px;
+    position: absolute;
+    top: -80px;
+    left: 20px;
+}
+.fas{
+    font-size: 42px;
+}
+
+.container_workshop1 h1{
+    color: var(--light);
+}
+
+.container__forms{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 40px 50px;
+}
+.container__forms #triangle{
+    gap: 8.2px !important;
+}
+#triangle label{
+    margin: 5px 0px 10px;
+}
+#triangleMeasure{
+    margin-top: 6px;
+    margin-bottom: 7.5px;
+}
+.container__forms #square, .container__forms #Circle{
+    max-height: 270px;
+}
+
+#triangle_type_input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.container__forms form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--middle);
+    /* max-width: 500px; */
+    min-width: 330px;
+}
+.container__forms form input, select{
+    border: none;
+    outline: none;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 5px 12px;
+}
+
+select{
+    background-color: var(--nice);
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="button"]:hover, input[type="number"]:hover{
+    background-color: #000;
+    color: #99FFFF;
+}
+
+input[type="number"]:focus{
+    padding: 8px 13px;
+    background-color: #000;
+    color: #99FFFF;
+}
+
+
+.fa-caret-up{
+    transform: scale(2.5);
+}

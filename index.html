@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/inputs.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="workshop1/style.css">
     <title>JS course</title>
 </head>
 <body>
@@ -41,6 +42,67 @@
             </div>
         </section>
     </article>
+    <div class="workshop1">
+        <div class="container_workshop1">
+
+            <h1>Area and perimeter of geometric figures</h1>
+    
+            <div class="container__forms">
+                <form id="square">
+                    <i class="fas fa-square-full"></i>
+                    <label for="squareSide"><b>Type the side length:</b> </label>
+                    <input type="number" id="squareSide">
+                    <select id="squareMeasure">
+                        <option value="km">km</option>
+                        <option value="m">m</option>
+                        <option value="cm" selected>cm</option>
+                        <option value="mm">mm</option>
+                    </select>
+                    <input type="button" id="calSquare" value="Calculate">
+                    <p id="squareResult"></p>
+                </form>
+        
+                <form id="triangle">
+                    <i class="fas fa-caret-up"></i>
+                    <label><b>What triangule do you need?</b></label>
+                    <select id="triangle_type">
+                        <option value="equi">Equilateral</option>
+                        <option value="iso">Isosceles</option>
+                        <option value="esca">Scalene</option>
+                        <option value="recta">Rectangle</option>
+                    </select>
+                    <div id="triangle_type_input">
+    
+                    </div>
+                    <select id="triangleMeasure">
+                        <option value="km">km</option>
+                        <option value="m">m</option>
+                        <option value="cm" selected>cm</option>
+                        <option value="mm">mm</option>
+                    </select>
+                    <input type="button" id="calTriangle" value="Calculate">
+                    <p id="triangleResult"></p>
+                </form>
+        
+                <form id="Circle">
+                    <i class="fas fa-circle"></i>
+                    <label for="circleR"><b>Type the radio length:</b> </label>
+                    <input type="number" id="circleR">
+                    <select id="circleMeasure">
+                        <option>km</option>
+                        <option>m</option>
+                        <option selected>cm</option>
+                        <option>mm</option>
+                    </select>
+                    <input type="button" id="calCircle" value="Calculate">
+                    <p id="circleResult"></p>
+                </form>
+            </div>
+            
+        </div>
+        
+        
+    </div>
     <footer>
         <p>Follow me :)</p>
         <div class="follow">
@@ -50,5 +112,7 @@
         </div>
     </footer>
     <script src="index.js"></script>
+    <script src="workshop1/figures.js"></script>
+    <script src="workshop1/triangles.js"></script>
 </body>
 </html>
