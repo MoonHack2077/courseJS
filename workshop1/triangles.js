@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded',()=>{
         else if(triangle_type_value === 'recta'){
             triangle_type_input.innerHTML=
             `
-                <p>Type the opposite hick length: </p>
+                <p><b>Type the opposite hick length:</b> </p>
                 <input type="number" id="opposite">
-                <p>Type the adjacent hick length: </p>
+                <p><b>Type the adjacent hick length:</b> </p>
                 <input type="number" id="adjacent">
             `
             const opposite = document.getElementById('opposite');
