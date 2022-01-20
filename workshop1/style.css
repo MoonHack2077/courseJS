@@ -13,6 +13,9 @@
 /* body{
     background-color: var(--dark);
 } */
+.workshop1{
+    margin-top: 90px;
+}
 .container_workshop1{
     text-align: center;
     padding-top: 100px;
@@ -41,11 +44,13 @@
     justify-content: center;
     max-width: 1200px;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 10px;
     padding: 40px 50px;
 }
+
 .container__forms #triangle{
     gap: 8.2px !important;
+    color: #000;
 }
 #triangle label{
     margin: 5px 0px 10px;
@@ -55,7 +60,7 @@
     margin-bottom: 7.5px;
 }
 .container__forms #square, .container__forms #Circle{
-    max-height: 270px;
+    max-height: 254.55px;
 }
 
 #triangle_type_input{
@@ -105,8 +110,11 @@ input[type="number"]:focus{
     background-color: #000;
     color: #99FFFF;
 }
-
+.fas{
+    color: #000;
+}
 
 .fa-caret-up{
+    color: #000;
     transform: scale(2.5);
 }
