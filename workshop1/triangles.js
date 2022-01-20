@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     const triangleResult = document.getElementById('triangleResult');
     const triangleMeasure = document.getElementById('triangleMeasure');
 
+    triangle_type_input.style.display = 'none';
+
     triangle_type.onchange=()=>{
+        triangle_type_input.style.display = 'flex';
         const triangle_type_value = triangle_type.value;
         const isPositive = num => num > 0;
         const isNegative = () => triangleResult.innerHTML= '<b>The sides must be greater than 0!!</b>';

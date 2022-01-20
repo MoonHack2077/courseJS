@@ -50,10 +50,8 @@ a{
 #triangle label{
     margin: 5px 0px 10px;
 }
-#triangle_type{
-    margin-bottom: -4px;
-}
 #triangleMeasure{
+    margin-top: 6px;
     margin-bottom: 7.5px;
 }
 .container__forms #square, .container__forms #Circle{
