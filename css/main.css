@@ -15,7 +15,27 @@
 body{
     background-color: var(--dark);
     text-align: center;
-    display: grid;
-    grid-template-rows: 1fr 1000px repeat(2,500px) auto;
+    /* display: grid;
+    grid-template-rows: 1fr  repeat(3,500px) auto; */
     min-height: 100vh;
+}
+
+hr{
+    border: none;
+    border: 2px solid var(--ligth);
+}
+
+.arrow{
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    transition: all 310ms ease;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.arrow:hover{
+    transform: scale(1.1);
+}
+.arrow .fas{
+    color:var(--ligth);
 }

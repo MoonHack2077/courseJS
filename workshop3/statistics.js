@@ -27,7 +27,20 @@ document.addEventListener('DOMContentLoaded',()=>{
         })
 
         const fash= Object.entries(list).sort((a,b)=> a[1]-b[1]);
-        return fash.pop()[0];
+
+        //filtre todos los que son iguales al mayor(fash[fash.length-1][1])
+        const b=[];
+        for( let i=0; i<fash.length; i++ ){
+            if( fash[i][1] === fash[fash.length-1][1] ){
+            b.push(fash[i]);
+        }
+        }
+        
+        const c=[];
+        for( let i=0; i<b.length; i++ ){
+            c.push(b[i][0])
+        }
+        return c;
     }
 
     const inputNumbers = document.getElementById('input_numbers');
