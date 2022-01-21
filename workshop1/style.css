@@ -97,7 +97,7 @@ input[type="number"]::-webkit-outer-spin-button{
     margin: 0;
 }
 
-input[type="button"]:hover, input[type="number"]:hover{
+#calSquare:hover, #calTriangle:hover, #calCircle{
     background-color: #000;
     color: #99FFFF;
 }

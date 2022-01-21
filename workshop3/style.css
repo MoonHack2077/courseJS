@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+:root{
+    --dark: #001011;
+    --midle: #3AAFB9;
+    --ligth: #64E9EE;
+    --nice: #093A3E;
+}
+.workshop3{
+    display: flex;
+    flex-direction: column;
+}
+.workshop3 form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--middle);
+    width: 300px;
+    /* height: 200px; */
+    margin: auto;
+    padding: 10px;
+}
+.box_inputs{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+#btn_add, #input_numbers{
+    border: none;
+    outline: none;
+    background-color: var(--dark);
+    color: var(--ligth);
+    padding: 2px;
+    width: 100px;
+}
+#input_numbers{
+    padding-left: 20px;
+    width: 80px;
+}
+
+#btn_add:hover, #input_numbers:hover, #remove:hover, #cal:hover{
+    background-color: #000;
+    color: #CCFFFF;
+}
+.remove{
+    margin-top: 20px;
+}
+#remove, #cal{
+    border: none;
+    outline: none;
+    background-color: var(--dark);
+    color: var(--ligth);
+    padding: 2px;
+    width: 200px;
+}
+
+.show{
+    margin-top: 20px;
+}
+
+.show_list, .cal_show{
+    background-color: #000;
+    max-width: 200px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.calculated{
+    margin-top: 20px;
+}
