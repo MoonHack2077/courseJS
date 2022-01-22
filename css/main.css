@@ -12,6 +12,10 @@
     --ligth: #63E9EE;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--dark);
     text-align: center;
@@ -25,7 +29,7 @@ hr{
     border: 2px solid var(--ligth);
 }
 
-.arrow{
+#arrow{
     position: fixed;
     right: 10px;
     bottom: 80px;
@@ -33,9 +37,9 @@ hr{
     border-radius: 50%;
     cursor: pointer;
 }
-.arrow:hover{
+#arrow:hover{
     transform: scale(1.1);
 }
-.arrow .fas{
+#arrow .fas{
     color:var(--ligth);
 }
